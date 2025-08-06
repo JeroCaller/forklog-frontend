@@ -2,7 +2,7 @@
 import { Client } from "@stomp/stompjs";
 import SockJS from "sockjs-client";
 
-const baseURL = process.env.REACT_APP_API_BASE_URL || "https://port-0-forklog-m10lhqc01e8bd7d0.sel4.cloudtype.app";
+const baseURL = process.env.REACT_APP_API_BASE_URL;
 
 const useWebSocket = (setChats) => {
     const [stompClient, setStompClient] = useState(null);

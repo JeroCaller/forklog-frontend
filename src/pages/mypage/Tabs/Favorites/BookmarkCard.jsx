@@ -13,7 +13,7 @@ const BookmarkCard = ({ name, rating, thumbnail, eateryNo }) => {
   const [formError, setFormError] = useState(""); // 에러 메시지
 
   // Spring 프록시를 통해 이미지를 로드하기 위한 URL 생성
-  const proxyThumbnail = `https://port-0-forklog-m10lhqc01e8bd7d0.sel4.cloudtype.app/proxy/image?url=${encodeURIComponent(thumbnail)}`;
+  const proxyThumbnail = `${process.env.REACT_APP_API_BASE_URL}/proxy/image?url=${encodeURIComponent(thumbnail)}`;
 
   useEffect(() => {
     const fetchFavoritesCount = async () => {

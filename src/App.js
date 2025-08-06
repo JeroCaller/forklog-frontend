@@ -3,11 +3,12 @@ import AuthRegister from './pages/auth/AuthRegister.jsx';
 import {Route,Routes} from 'react-router-dom';
 import MainTemplate from "./pages/templates/main/MainTemplate";
 import GTranslate from 'pages/templates/main/GTranslate.jsx';
+import {printDotEnvVars} from './utils/printTest';
 
 function App() {
 
   return (
-    <>
+    <div /*{onLoad={() => printDotEnvVars()}*/>
       <GTranslate />
 
       <Routes>
@@ -15,7 +16,7 @@ function App() {
         <Route path='/login' element={<AuthLogin />} ></Route>
         <Route path='/register' element={<AuthRegister></AuthRegister>}></Route>
       </Routes>
-    </>
+    </div>
   );
 }
 

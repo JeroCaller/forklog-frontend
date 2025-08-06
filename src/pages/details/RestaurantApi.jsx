@@ -24,8 +24,6 @@ const validateImages = async (urls) => {
 
 // 음식점 이미지를 가져오는 함수
 const fetchRestaurantImages = async (restaurantName, restaurantAddress) => {
-  // 카카오 API 키
-  const API_KEY = "60ddc85bdd372041c11e1dc97e03d442"; 
   // 카카오 이미지 검색 API URL
   const API_URL = `https://dapi.kakao.com/v2/search/image?query=${encodeURIComponent(restaurantName)}&size=30`; // 30개 검색해서 그 중 유효한 url만 최소 0개에서 최대 5개 가져옴.
   
@@ -33,7 +31,7 @@ const fetchRestaurantImages = async (restaurantName, restaurantAddress) => {
     // 카카오 API에 요청을 보냄
     const response = await fetch(API_URL, {
       headers: {
-        Authorization: `KakaoAK ${API_KEY}`, // API 인증을 위한 헤더 추가
+        Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_REST_API_KEY}`, // API 인증을 위한 헤더 추가
       },
     });
 
