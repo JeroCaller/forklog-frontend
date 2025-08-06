@@ -82,7 +82,7 @@ const MainCard = memo(({ data }) => {
           {/* 이미지 출력 영역 (좌) */}
           <Box flex="3" overflow="hidden">
                 <Image
-                    src={`https://port-0-forklog-m10lhqc01e8bd7d0.sel4.cloudtype.app/proxy/image?url=${encodeURIComponent(eatery?.thumbnail)}`}
+                    src={`${process.env.REACT_APP_API_BASE_URL}/proxy/image?url=${encodeURIComponent(eatery?.thumbnail)}`}
                     height="100%"
                     width="100%"
                     objectFit="cover"
